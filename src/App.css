@@ -285,6 +285,7 @@ hr {
 label select {
   display: block;
   width: 100%;
+  background-color: white;
   height: 40px;
   border-radius: 10px;
   font-size: 17px;
@@ -292,7 +293,7 @@ label select {
   outline: none;
   padding: 10px;
   border: none;
-  color: var(--bg-color);
+  color: black;
   cursor: pointer;
 }
 
