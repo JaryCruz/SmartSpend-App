@@ -97,10 +97,6 @@ button:active {
 }
 
 /* Header */
-header .btn-primary {
-  margin-right: 20px;
-}
-
 .header-appearance {
   display: flex;
   justify-content: space-between;
@@ -130,6 +126,10 @@ hr {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+}
+
+.header-actions .btn-primary {
+  margin-right: 20px;
 }
 
 .search-bar {
@@ -294,6 +294,10 @@ label select {
   border: none;
 }
 
+select option {
+  color: var(--text-color);
+}
+
 .modal-header {
   display: flex;
   align-items: center;
@@ -350,6 +354,10 @@ label select {
 @media (max-width: 600px) {
   h1 {
     font-size: 27px;
+  }
+
+  .header-appearance {
+    margin: 15px auto;
   }
 
   .header-actions {
