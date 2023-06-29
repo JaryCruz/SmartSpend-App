@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --purple: hsl(274, 82%, 60%);
+  --bg-color: hsl(0, 0%, 0%);
+  --bg-secondary-color: hsl(0, 0%, 18%);
+  --bg-card-total: hsl(0, 0%, 25%);
+  --bg-card-max: hsl(0, 100%, 75%);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+[data-theme='light'] {
+  --bg-color: hsl(0, 0%, 100%);
+  --bg-secondary-color: hsl(0, 0%, 90%);
+  --bg-card-total: hsl(0, 0%, 95%);
+  --bg-card-max: hsl(0, 100%, 90%);
+  --text-color: hsl(0, 0%, 0%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  transition: all 300ms ease-in-out;
+}
+
+h1 {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 30px;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 300ms ease-in-out;
+  border-radius: 10px;
+}
+
+button:active {
+  scale: 0.95;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--purple);
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.outline-primary {
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.outline-primary:hover {
+  color: white;
+  background-color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.outline-danger {
+  color: hsl(0, 100%, 50%);
+  border: 1px solid hsl(0, 100%, 50%);
+}
+
+.outline-danger:hover {
+  background-color: hsl(0, 100%, 50%);
+  color: white;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 20px auto;
+  padding: 0 30px;
+}
+
+/* Header */
+header .btn-primary {
+  margin-right: 20px;
+}
+
+.header-appearance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px auto;
+}
+
+.header-appearance button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  color: white;
+  font-size: 18px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  border: none;
+  opacity: 0.4;
+  margin-bottom: 30px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar input {
+  padding-left: 40px;
+  width: 500px;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-color);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.search-bar i {
+  position: absolute;
+  color: var(--text-color);
+  left: 15px;
+  top: 12px;
+  font-size: 16px;
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.card-budget {
+  background-color: var(--bg-secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+}
+
+.card-budget.bg-max {
+  background-color: var(--bg-card-max);
+}
+
+.card-budget.bg-total {
+  background-color: var(--bg-card-total);
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-details {
+  display: flex;
+  align-items: baseline;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-details span {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.progress-bar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  height: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress {
+  border-radius: 10px;
+  height: 18px;
+  transition: width 0.5s ease-in;
+}
+
+.progress.normal {
+  background-color: hsl(120, 70%, 50%);
+}
+
+.progress.warning {
+  background-color: hsl(56, 90%, 60%);
+}
+
+.progress.danger {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Modal */
+.modal {
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 600px;
+  background-color: var(--bg-secondary-color);
+  color: var(--text-color);
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 500ms ease-in;
+}
+
+.modal-content h2 {
+  font-size: 25px;
+}
+
+.modal-content label {
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.modal-content label input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 17px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+label select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 17px;
+  margin-top: 10px;
+  outline: none;
+  padding: 10px;
+  border: none;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header div {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal-body {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-item h3 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.payment-item p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.payment-item div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 870px) {
+  .search-bar input {
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 27px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .payment-item h3 {
+    font-size: 18px;
+  }
+
+  .payment-item p {
+    font-size: 16px;
+  }
+}
