@@ -292,10 +292,8 @@ label select {
   outline: none;
   padding: 10px;
   border: none;
-}
-
-select option {
-  color: var(--text-color);
+  color: var(--bg-color);
+  cursor: pointer;
 }
 
 .modal-header {
@@ -353,7 +351,7 @@ select option {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 27px;
+    font-size: 20px;
   }
 
   .header-appearance {
