@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useBudgets } from '../contexts/BudgetsContext'
 
 export default function NewBudgetModal({ show, handleClose }) {
@@ -16,6 +16,12 @@ export default function NewBudgetModal({ show, handleClose }) {
     maxRef.current.value = ''
     handleClose()
   }
+
+  useEffect(() => {
+    if (show && nameRef.current) {
+      nameRef.current.focus()
+    }
+  }, [show])
 
   return (
     <div className={`modal ${show ? '' : 'hidden'}`}>

@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { useBudgets, UNCLASSIFIED_BUDGET_ID } from '../contexts/BudgetsContext'
 
 export default function NewPaymentModal({ show, handleClose }) {
@@ -19,6 +19,12 @@ export default function NewPaymentModal({ show, handleClose }) {
     budgetIdRef.current.value = ''
     handleClose()
   }
+
+  useEffect(() => {
+    if (show && descriptionRef.current) {
+      descriptionRef.current.focus()
+    }
+  }, [show])
 
   return (
     <div className={`modal ${show ? '' : 'hidden'}`}>

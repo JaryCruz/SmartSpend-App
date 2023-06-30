@@ -4,7 +4,6 @@ export default function BudgetCard({
   name,
   amount,
   max,
-  total,
   hideButtons,
   onNewPaymentClick,
   onViewPaymentsClick
@@ -12,8 +11,6 @@ export default function BudgetCard({
   const classNames = []
   if (amount > max) {
     classNames.push("bg-max")
-  } else if (total) {
-    classNames.push("bg-total")
   }
 
   const progressWidth = amount / max * 100
